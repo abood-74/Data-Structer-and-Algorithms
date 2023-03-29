@@ -1,4 +1,4 @@
-"""Write a program that reveses lines in file"""
+"""Write a program that reveses lines in file."""
 import os
 from stack_array_based import Stack
 def reverse_ﬁle(ﬁlename):
