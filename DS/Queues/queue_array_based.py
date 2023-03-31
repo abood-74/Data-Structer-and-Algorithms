@@ -5,11 +5,10 @@ class Empty(Exception):
 
 class Queue:
     """FIFO queue implementation using a Python list as underlying storage."""
-    DEFAULT_CAPACITY = 10                  # moderate capacity for all new queues   
     
-    def __init__(self) -> None:
+    def __init__(self,capacity = 10) -> None:
         """Create an empty queue."""
-        self._data = [None]*Queue.DEFAULT_CAPACITY
+        self._data = [None] * capacity
         self._size = 0
         self._front = 0
         self._rear = 0
