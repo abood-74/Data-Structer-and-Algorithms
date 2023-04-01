@@ -16,7 +16,7 @@ class Stack:
 
     def __len__(self):
         """Return the number of elements in the stack."""
-        return len(self._data)
+        return self._size
 
     def is_empty(self):
         """return True if the stack is empty"""
@@ -27,9 +27,11 @@ class Stack:
         if self._size  == self._capacity:
             self._resize(2 * self._capacity)
         
+        
         self._top += 1
         self._data[self._top] = e
         self._size +=1
+        
 
     def top(self):
         """Return (but do not remove) the element at the top of the stack.
@@ -39,6 +41,7 @@ class Stack:
 
         if self.is_empty():
             raise Empty('Stack is empty')
+        return self._data[self._top]
 
 
     def pop(self):
@@ -54,7 +57,7 @@ class Stack:
         self._top -= 1
         self._size -= 1
 
-        if self._size <= self._capacity // 4:
+        if self._size <= self._capacity // 4 and len(self._data) > 1:
             self._resize(self._capacity //2)
         return number
     

@@ -9,6 +9,7 @@ def dailyTemperatures(temperatures) :
     answer = [0] * len(temperatures)
     for i in range(len(temperatures)):
         while len(s) > 0  and temperatures[s.top()] < temperatures[i]:                # if the temperature became warmer compare it with the top element of stack untill you find bigger value in stack or stack become empty
+            
             answer[s.top()] = i - s.top()                                             # update the value of the day by accesing its index
             s.pop()
         
