@@ -2,7 +2,7 @@
 import os
 from stack_array_based import Stack
 def reverse_ﬁle(ﬁlename):
-    S = Stack( )
+    S = Stack()
     original = open(ﬁlename)
     
     for line in original:                               # we will re-insert newlines when writing
@@ -21,6 +21,7 @@ def reverse_ﬁle(ﬁlename):
 if __name__ == "__main__":
     # Get the current working directory
     cwd = os.getcwd()
+
     # Construct the file path
     test = os.path.join(cwd, 'DS/Stack/test.txt')
     # before reversing
