@@ -1,4 +1,4 @@
-class DoublyLinkedBase:
+class _DoublyLinkedBase:
     """A base class providing a doubly linked list representation."""
 
     class _Node:
