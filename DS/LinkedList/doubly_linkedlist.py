@@ -24,7 +24,7 @@ class _DoublyLinkedBase:
         """Return True if list is empty."""
         return self._size == 0
 
-    def insert_between(self, e, predecessor, successor):
+    def _insert_between(self, e, predecessor, successor):
         """Add element e between two existing nodes and return new node."""
         newest = self._Node(e, predecessor, successor)  # create new node
         predecessor._next = newest  # link predecessor to new node
@@ -32,7 +32,7 @@ class _DoublyLinkedBase:
         self._size += 1  # increment the size of the list
         return newest
 
-    def delete_node(self, node):
+    def _delete_node(self, node):
         """Delete non-sentinel node from the list and return its element."""
         predecessor = node._prev
         successor = node._next
@@ -47,15 +47,15 @@ class _DoublyLinkedBase:
 # Tests
 if __name__ == '__main__':
     # create an empty list
-    dll = DoublyLinkedBase()
+    dll = _DoublyLinkedBase()
 
     # check if the list is empty
     print(f"Is the list empty? {dll.is_empty()}")  # expected output: True
 
     # insert elements into the list
-    node1 = dll.insert_between(10, dll._header, dll._trailer)
-    node2 = dll.insert_between(20, node1, dll._trailer)
-    node3 = dll.insert_between(30, dll._header, node1)
+    node1 = dll._insert_between(10, dll._header, dll._trailer)
+    node2 = dll._insert_between(20, node1, dll._trailer)
+    node3 = dll._insert_between(30, dll._header, node1)
 
     # check the size of the list
     print(f"The size of the list is: {len(dll)}")  # expected output: 3
@@ -64,7 +64,7 @@ if __name__ == '__main__':
     print(f"Is the list empty? {dll.is_empty()}")  # expected output: False
 
     # delete an element from the list
-    deleted_element = dll.delete_node(node2)
+    deleted_element = dll._delete_node(node2)
     print(f"The deleted element is: {deleted_element}")  # expected output: 20
 
     # check the size of the list after deletion
