@@ -1,6 +1,6 @@
 from doubly_linkedlist import _DoublyLinkedBase
 
-class PositonalList(_DoublyLinkedBase):
+class PositionalList(_DoublyLinkedBase):
     """A positional list container based on a doubly linked list."""
 
     class Position:
@@ -104,7 +104,7 @@ class PositonalList(_DoublyLinkedBase):
 
 if __name__ == '__main__':
     # create an empty positional list
-    my_list = PositonalList()
+    my_list = PositionalList()
     
     # add elements to the list
     my_list.add_first(1)
