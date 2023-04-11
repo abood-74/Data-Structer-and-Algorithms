@@ -68,6 +68,12 @@ class Stack:
         for i in range(self._size):
             self._data[i] = old[i]
         self._capacity = cap
+
+    def __iter__(self):
+        """Generate a forward iteration of the elements in the stack."""
+        for i in self._data[:self._top+1]:
+            yield i
+
     
         
 
