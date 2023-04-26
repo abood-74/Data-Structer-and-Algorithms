@@ -49,31 +49,33 @@ class UnsortedTableMap(MapBase):
 
 
 
-# Test cases for UnsortedTableMap
+if __name__ == "__main__":
 
-# Create an empty map
-map = UnsortedTableMap()
+    # Test cases for UnsortedTableMap
 
-# Test __setitem__ and __getitem__
-map['a'] = 1
-map['b'] = 2
-map['c'] = 3
-print(map['a'])  # Expected output: 1
-print(map['b'])  # Expected output: 2
-print(map['c'])  # Expected output: 3
+    # Create an empty map
+    map = UnsortedTableMap()
 
-# Test __len__
-print(len(map))  # Expected output: 3
+    # Test __setitem__ and __getitem__
+    map['a'] = 1
+    map['b'] = 2
+    map['c'] = 3
+    print(map['a'])  # Expected output: 1
+    print(map['b'])  # Expected output: 2
+    print(map['c'])  # Expected output: 3
 
-# Test __delitem__
-del map['b']
-print('b' not in map)  # Expected output: True
-print(len(map))  # Expected output: 2
+    # Test __len__
+    print(len(map))  # Expected output: 3
 
-# Test KeyError for nonexistent key
-try:
-    print(map['d'])
-except KeyError as e:
-    print(str(e))  # Expected output: "Key Error"
-else:
-    print("KeyError not raised for nonexistent key")
+    # Test __delitem__
+    del map['b']
+    print('b' not in map)  # Expected output: True
+    print(len(map))  # Expected output: 2
+
+    # Test KeyError for nonexistent key
+    try:
+        print(map['d'])
+    except KeyError as e:
+        print(str(e))  # Expected output: "Key Error"
+    else:
+        print("KeyError not raised for nonexistent key")
