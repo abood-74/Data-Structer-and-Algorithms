@@ -137,4 +137,5 @@ if __name__ == "__main__":
     print(t.num_children(root))  # expected output: 1
     print(t.right(root))  # expected output: None
     print(len(t))  # expected output: 2
+    print(t.is_root())
      
